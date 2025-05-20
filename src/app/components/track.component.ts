@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-track',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './track.component.html',
   styleUrls: ['./track.component.scss'] // Corrected here
 })
