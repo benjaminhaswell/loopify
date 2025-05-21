@@ -1,3 +1,9 @@
 <h1>Loopify</h1>
-<app-track trackName="Test"></app-track>
-<button (click)="loginWithSpotify()">Login with Spotify</button>
+
+@if (authenticated) {
+    @for (track of tracks; track track) {
+        <app-track [name]="track.name" [artist]="track.artist" [uri]="track.uri" [position]="track.position"></app-track>
+    }
+} @else {
+    <button (click)="loginWithSpotify()">Login with Spotify</button>
+}

@@ -7,7 +7,7 @@ import { CLIENT_ID } from '../environments/environment';
 export class PkceAuthorizationService {
   private clientId = CLIENT_ID;
   private redirectUri = 'http://localhost:4200/';
-  private scope = 'user-read-private user-read-email';
+  private scope = 'user-read-private user-read-email user-modify-playback-state';
   private authUrl = 'https://accounts.spotify.com/authorize';
   private tokenUrl = 'https://accounts.spotify.com/api/token';
 

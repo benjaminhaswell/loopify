@@ -1,3 +1,7 @@
 <div class="track">
-    <h2>{{trackName}}</h2>
+    <div class="name">
+        <h2>{{name()}}</h2>
+        <h3>{{artist()}}</h3>
+    </div>
+    <button (click)="playLoop(uri())">&#9658;</button>
 </div>

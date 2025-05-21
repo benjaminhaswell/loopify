@@ -43,3 +43,4 @@ Thumbs.db
 
 # Custom files
 environment.ts
+loopify-proxy/node_modules
