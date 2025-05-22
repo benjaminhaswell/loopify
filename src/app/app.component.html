@@ -1,9 +1,30 @@
 <h1>Loopify</h1>
 
-@if (authenticated) {
-    @for (track of tracks; track track) {
-        <app-track [name]="track.name" [artist]="track.artist" [uri]="track.uri" [position]="track.position"></app-track>
-    }
-} @else {
+@if (!authenticated) {
     <button (click)="loginWithSpotify()">Login with Spotify</button>
+} @else {
+
+    <h2>Tracks</h2>
+  
+    @for (track of tracks; track track) {
+        <app-track [name]="track.name" [artist]="track.artist" [uri]="track.uri" [startPos]="track.startPos" [endPos]="track.endPos"></app-track>
+    }
+
+    <h2>Playground</h2>
+
+    <div>
+        <label>
+            Start Position (ms):
+            <input type="number" [(ngModel)]="playgroundStartPos">
+        </label>
+        <br>
+        <label>
+            End Position (ms):
+            <input type="number" [(ngModel)]="playgroundEndPos">
+        </label>
+        <br>
+        <button (click)="testLoop()">Test Loop</button>
+        <br>
+        <button (click)="endLoop()">End Loop</button>
+    </div>
 }
